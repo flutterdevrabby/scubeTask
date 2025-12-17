@@ -12,51 +12,48 @@ class TopTabbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60.h,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
-        margin: EdgeInsets.symmetric(horizontal: 20.w),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: Color(0xFFA5A7B9)),
-        ),
-
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: List.generate(scmDataProvider.topTabList.length, (index) {
-            final bool isSelected = scmDataProvider.selectTopTabbar == index;
-            return InkWell(
-              onTap: () {
-                scmDataProvider.updateTopBar(index);
-              },
-              child: Row(
-                spacing: 10.w,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    isSelected
-                        ? AssetsIcon.activeIcon
-                        : AssetsIcon.nonActiveIcon,
-                    width: 14.w,
-                    height: 14.h,
-                    fit: BoxFit.cover,
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+      margin: EdgeInsets.symmetric(horizontal: 20.w),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: Color(0xFFA5A7B9),width: 1.5.w),
+      ),
+    
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: List.generate(scmDataProvider.topTabList.length, (index) {
+          final bool isSelected = scmDataProvider.selectTopTabbar == index;
+          return InkWell(
+            onTap: () {
+              scmDataProvider.updateTopBar(index);
+            },
+            child: Row(
+              spacing: 10.w,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Image.asset(
+                  isSelected
+                      ? AssetsIcon.activeIcon
+                      : AssetsIcon.nonActiveIcon,
+                  width: 14.w,
+                  height: 14.h,
+                  fit: BoxFit.cover,
+                ),
+                Text(
+                  scmDataProvider.topTabList[index],
+                  style: TextFontStyle.textLine14C5E5E5EW500.copyWith(
+                    color: isSelected ? Color(0xFF0096FC) : Color(0xFF646984),
+                    fontWeight: isSelected
+                        ? FontWeight.w700
+                        : FontWeight.w400,
                   ),
-                  Text(
-                    scmDataProvider.topTabList[index],
-                    style: TextFontStyle.textLine14C5E5E5EW500.copyWith(
-                      color: isSelected ? Color(0xFF0096FC) : Color(0xFF646984),
-                      fontWeight: isSelected
-                          ? FontWeight.w700
-                          : FontWeight.w400,
-                    ),
-                  ),
-                ],
-              ),
-            );
-          }),
-        ),
+                ),
+              ],
+            ),
+          );
+        }),
       ),
     );
   }

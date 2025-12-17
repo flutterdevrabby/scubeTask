@@ -6,7 +6,7 @@ import '../const/assets_path.dart';
 class ScmDataProvider extends ChangeNotifier {
   // Top Tab Bar
   List<String> topTabList = ["Data View", "Revenue View"];
-  int selectTopTabbar = 1;
+  int selectTopTabbar = 0;
 
   void updateTopBar(int index) {
     selectTopTabbar = index;
@@ -59,6 +59,8 @@ class ScmDataProvider extends ChangeNotifier {
     {"value": "5.53 kw"},
   ];
 
+
+// Date 
   String? startDate;
 
   String? endDate;
@@ -87,6 +89,17 @@ class ScmDataProvider extends ChangeNotifier {
       endDate = DateFormat('dd MMM yyyy').format(dateTime);
     }
 
+    notifyListeners();
+  }
+
+  
+
+  // When user click the icon 
+  // data will expand and icon will change
+  bool isExpand = false;
+
+  void updatePand(bool value) {
+    isExpand = value;
     notifyListeners();
   }
 }

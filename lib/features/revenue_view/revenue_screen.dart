@@ -3,17 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scube_task/const/assets_path.dart';
 import 'package:scube_task/const/text_stye.dart';
 
+import '../../providers/scm_data_provider.dart';
 import '../scm_data/widgets/gauge_widget.dart';
 
 class RevenueScreen extends StatefulWidget {
-  const RevenueScreen({super.key});
+  final ScmDataProvider scmDataProvider;
+  const RevenueScreen({super.key, required this.scmDataProvider});
 
   @override
   State<RevenueScreen> createState() => _RevenueScreenState();
 }
 
 class _RevenueScreenState extends State<RevenueScreen> {
-  bool isExpanded = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,12 +35,8 @@ class _RevenueScreenState extends State<RevenueScreen> {
           child: Theme(
             data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
             child: ExpansionTile(
-              // collapsedBackgroundColor: Colors.transparent,
-              // backgroundColor: Colors.transparent,
               onExpansionChanged: (value) {
-                setState(() {
-                  isExpanded = value;
-                });
+                widget.scmDataProvider.updatePand(value);
               },
               title: Row(
                 spacing: 8.w,
@@ -71,7 +68,7 @@ class _RevenueScreenState extends State<RevenueScreen> {
                 ),
                 padding: EdgeInsets.all(10.sp),
                 child: Image.asset(
-                  isExpanded
+                  widget.scmDataProvider.isExpand
                       ? AssetsIcon.expandUpIcon
                       : AssetsIcon.expandDownIcon,
                   color: Colors.white,

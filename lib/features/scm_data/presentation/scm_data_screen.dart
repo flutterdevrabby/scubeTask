@@ -22,58 +22,69 @@ class ScmDataScreen extends StatelessWidget {
           appBar: CustomAppBar(),
           backgroundColor: Color(0xFFD9E4F1),
           body: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Container(
-              width: 1.sw,
-              margin: EdgeInsets.symmetric(vertical: 30.h),
-              padding: EdgeInsets.symmetric(vertical: 20.h),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.r),
-                border: Border.all(width: 1.w, color: const Color(0xFFB6B8D0)),
-              ),
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  // Top Tabbar
-                  Positioned(
-                    top: -20.h,
-                    left: 0,
-                    right: 0,
-                    child: TopTabbarWidget(scmDataProvider: provider),
+            physics: ClampingScrollPhysics(),
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 40.h),
+                  padding: EdgeInsets.symmetric(vertical: 20.h),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(
+                      width: 1.5.w,
+                      color: const Color(0xFFB6B8D0),
+                    ),
                   ),
+                  child: Column(
+                    children: [
+                      Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Container(width: 1.sw, color: Colors.red),
+                          //  Top Tabbar
+                          Positioned(
+                            top: -45.h,
+                            left: 0,
+                            right: 0,
+                            child: TopTabbarWidget(scmDataProvider: provider),
+                          ),
+                        ],
+                      ),
+                      provider.selectTopTabbar == 0
+                          ? Column(
+                              children: [
+                                SizedBox(height: 40.h),
 
-                  provider.selectTopTabbar == 0
-                      ? Column(
-                          children: [
-                            SizedBox(
-                              height: 40.h,
-                            ), // leave space for top tabbar
-                            // Gauge widget
-                            GaugeWidget(
-                              title: '55.00',
-                              subtitle: 'kwh/sqft',
-                              value: 55,
-                            ),
+                                // Gauge widget
+                                GaugeWidget(
+                                  title: '55.00',
+                                  subtitle: 'kwh/sqft',
+                                  value: 55,
+                                ),
 
-                            SizedBox(height: 20.h),
+                                SizedBox(height: 20.h),
 
-                            // Center Tabbar
-                            CenterTabbarWidget(scmDataProvider: provider),
+                                //Center Tabbar
+                                CenterTabbarWidget(scmDataProvider: provider),
 
-                            SizedBox(height: 20.h),
+                                SizedBox(height: 20.h),
 
-                            // Data view
-                            provider.selectedCenterTabbar == 0
-                                ? CurrentDataWidget(scmDataProvider: provider)
-                                : CustomDateDataWidget(
-                                    scmDataProvider: provider,
-                                  ),
-                          ],
-                        )
-                      : RevenueScreen(),
-                ],
-              ),
+                                //Data view
+                                provider.selectedCenterTabbar == 0
+                                    ? CurrentDataWidget(
+                                        scmDataProvider: provider,
+                                      )
+                                    : CustomDateDataWidget(
+                                        scmDataProvider: provider,
+                                      ),
+                              ],
+                            )
+                          : RevenueScreen(scmDataProvider: provider),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         );
