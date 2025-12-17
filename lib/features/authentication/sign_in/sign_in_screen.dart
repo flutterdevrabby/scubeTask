@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:scube_task/providers/sign_in_provider.dart';
+import 'package:scube_task/routes/routes.dart';
 
 import '../../../const/assets_path.dart';
 import '../../../const/custom_button.dart';
@@ -159,11 +160,12 @@ class _SignInScreenState extends State<SignInScreen> {
                       CustomButton(
                         buttonName: "Login",
                         onPressed: () {
-                          if (!_formKey.currentState!.validate()) {
-                            return;
-                          } else {
-                            context.go('');
-                          }
+                          context.push(AppRoutes.scmScreen);
+                          // if (!_formKey.currentState!.validate()) {
+                          //   return;
+                          // } else {
+                            
+                          // }
                         },
                       ),
                       SizedBox(height: 10.h),

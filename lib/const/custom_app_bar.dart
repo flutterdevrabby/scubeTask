@@ -1,34 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:scube_task/const/assets_path.dart';
 import 'package:scube_task/const/text_stye.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String? titleText;
-  final Widget? title;
-  final bool automaticallyImplyLeading;
-  final List<Widget>? actions;
-  final Color? backgroundColor;
-  final Color? foregroundColor;
-  final TextStyle? style;
-  final bool centerTitle;
-  final double height;
-  final Widget? leading;
-
-  const CustomAppBar({
-    super.key,
-    this.titleText,
-    this.title,
-    this.centerTitle = true,
-    this.automaticallyImplyLeading = false,
-    this.actions,
-    this.backgroundColor,
-    this.foregroundColor,
-    this.style,
-    this.leading,
-    this.height = 55,
-  });
+  const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +15,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Back icon
-          SvgPicture.asset(
-            AssetsIcon.arrowLeftIcon,
-            width: 24.w,
-            height: 24.h,
-            fit: BoxFit.cover,
+          InkWell(
+            onTap: () {
+              context.pop();
+            },
+            child: SvgPicture.asset(
+              AssetsIcon.arrowLeftIcon,
+              width: 24.w,
+              height: 24.h,
+              fit: BoxFit.cover,
+            ),
           ),
 
           // Title Text
@@ -62,9 +45,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ],
       ),
       backgroundColor: Colors.white,
+      automaticallyImplyLeading: false,
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(height.h);
+  Size get preferredSize => Size.fromHeight(55.h);
 }

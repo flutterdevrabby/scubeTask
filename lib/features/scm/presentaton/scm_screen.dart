@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:go_router/go_router.dart';
 import 'package:scube_task/const/assets_path.dart';
 import 'package:scube_task/features/scm/widgets/data_gallery_view.dart';
 import 'package:scube_task/features/scm/widgets/data_view_widget.dart';
+import 'package:scube_task/routes/routes.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 import '../../../const/custom_app_bar.dart';
@@ -58,6 +60,15 @@ class _ScmScreenState extends State<ScmScreen> {
       "data2": "58805.63",
       "left_arrow": AssetsIcon.rightArrowIcon,
     },
+    {
+      "image": AssetsIcon.solarCellIcon,
+      "mark": AssetsIcon.blueIcon,
+      "title": "Total Solar",
+      "active": "(Active)",
+      "data1": "55505.63",
+      "data2": "58805.63",
+      "left_arrow": AssetsIcon.rightArrowIcon,
+    },
   ];
 
   //
@@ -78,11 +89,11 @@ class _ScmScreenState extends State<ScmScreen> {
 
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
-        physics: BouncingScrollPhysics(),
+        physics: ClampingScrollPhysics(),
 
         child: Column(
           children: [
-            SizedBox(height: 30.h),
+            SizedBox(height: 16.h),
 
             // Custom Tabbar
             Container(
@@ -263,15 +274,23 @@ class _ScmScreenState extends State<ScmScreen> {
                   ),
 
                   //    SizedBox(height: 10.h),
-                  ListView.builder(
-                    itemCount: dataList.length,
-                    shrinkWrap: true,
-                    padding: EdgeInsets.zero,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (_, index) {
-                      var data = dataList[index];
-                      return DataViewWidget(data: data);
-                    },
+                  SizedBox(
+                    height: 300.h,
+                    child: ListView.builder(
+                      itemCount: dataList.length,
+                      shrinkWrap: true,
+                      padding: EdgeInsets.zero,
+                      physics: BouncingScrollPhysics(),
+                      itemBuilder: (_, index) {
+                        var data = dataList[index];
+                        return GestureDetector(
+                          onTap: () {
+                            context.push(AppRoutes.scmDataScreen);
+                          },
+                          child: DataViewWidget(data: data),
+                        );
+                      },
+                    ),
                   ),
 
                   SizedBox(height: 6.h),
@@ -301,7 +320,12 @@ class _ScmScreenState extends State<ScmScreen> {
                     columnCount: 2,
                     child: ScaleAnimation(
                       child: FadeInAnimation(
-                        child: DataGalleryView(data: data),
+                        child: GestureDetector(
+                          onTap: () {
+                            context.push(AppRoutes.noDataScreen);
+                          },
+                          child: DataGalleryView(data: data),
+                        ),
                       ),
                     ),
                   );
