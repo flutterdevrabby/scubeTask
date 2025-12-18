@@ -1,16 +1,74 @@
-# scube_task
+# Scube Task
 
-A new Flutter project.
+# App Screen Shot
 
-## Getting Started
+<p align="center">
+  <img src="assets/app_screenshot/screenshot1.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot2.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot3.png" width="250"/>
+</p>
 
-This project is a starting point for a Flutter application.
+<p align="center">
+  <img src="assets/app_screenshot/screenshot4.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot5.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot6.png" width="250"/>
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+<p align="center">
+  <img src="assets/app_screenshot/screenshot7.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot8.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot9.png" width="250"/>
+</p>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<p align="center">
+  <img src="assets/app_screenshot/screenshot10.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot11.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot12.png" width="250"/>
+</p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+  <img src="assets/app_screenshot/screenshot13.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot14.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot15.png" width="250"/>
+</p>
+
+<p align="center">
+  <img src="assets/app_screenshot/screenshot16.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot17.png" width="250"/>
+  <img src="assets/app_screenshot/screenshot18.png" width="250"/>
+</p>
+
+
+---
+
+## System Requirements
+
+- **Flutter SDK:** 3.13 or above  
+- **Dart SDK:** 3.10.4 or above   
+---
+
+##  How to Download & Run
+
+### Step 1: Clone the project from GitHub
+
+```bash
+git clone https://github.com/flutterdevrabby/scubeTask.git
+```
+
+
+### Step 2: Navigate to the project folder
+```bash
+cd scubeTask
+```
+
+### Step 3: Install dependencies
+```bash
+flutter pub get
+```
+
+
+### Step 4: Run the app
+```bash
+flutter run
+```
+

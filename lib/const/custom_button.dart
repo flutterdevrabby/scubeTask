@@ -6,7 +6,7 @@ class CustomButton extends StatelessWidget {
   final String buttonName;
   final VoidCallback? onPressed;
   final double? height;
-  final BorderSide? side;
+
   final double? width;
   final double? borderRadius;
   final Color? color;
@@ -21,7 +21,6 @@ class CustomButton extends StatelessWidget {
     this.color,
     this.textStyle,
     this.padding,
-    this.side,
     super.key,
   });
 
@@ -29,7 +28,6 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       shape: RoundedRectangleBorder(
-        side: side ?? BorderSide(color: Colors.green, width: 1.w),
         borderRadius: BorderRadius.circular(borderRadius ?? 10.r),
       ),
       padding:
