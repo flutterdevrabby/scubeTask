@@ -28,8 +28,8 @@ class CustomDateDataWidget extends StatelessWidget {
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                      vertical: 16.h,
+                      horizontal: 8.w,
+                      vertical: 12.h,
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.r),
@@ -73,8 +73,8 @@ class CustomDateDataWidget extends StatelessWidget {
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                      vertical: 16.h,
+                      horizontal: 8.w,
+                      vertical: 12.h,
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.r),
@@ -116,7 +116,7 @@ class CustomDateDataWidget extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 16.h),
+        SizedBox(height: 14.h),
 
         ListView.builder(
           itemCount: scmDataProvider.eneryList.length,

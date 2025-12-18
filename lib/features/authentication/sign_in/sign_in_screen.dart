@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:scube_task/providers/sign_in_provider.dart';
@@ -39,7 +38,7 @@ class _SignInScreenState extends State<SignInScreen> {
         children: [
           // Top content
           Positioned(
-            top: 80.h,
+            top: 100.h,
             left: 0,
             right: 0,
             child: Column(
@@ -115,17 +114,15 @@ class _SignInScreenState extends State<SignInScreen> {
 
                             suffixIcon: IconButton(
                               onPressed: provider.togglePasswordVisibility,
-                              icon: SvgPicture.asset(
+                              icon: Image.asset(
                                 provider.passwordVisible
-                                    ? AssetsIcon.eyeOffIcon
-                                    : AssetsIcon.eyeOnIcon,
+                                    ? AssetsIcon.eyeOnIcon 
+                                    : AssetsIcon.eyeOffIcon,
 
                                 width: 24.w,
                                 height: 24.h,
-                                colorFilter: ColorFilter.mode(
-                                  Color(0xFF82797A),
-                                  BlendMode.srcIn,
-                                ),
+                                color: Color(0xFF82797A),
+
                                 fit: BoxFit.none,
                               ),
                             ),
@@ -184,8 +181,9 @@ class _SignInScreenState extends State<SignInScreen> {
                               "Register Now",
                               style: TextFontStyle.textLine12C5E5E5EW500
                                   .copyWith(
+                                    fontWeight: FontWeight.w700,
                                     color: Color(0xFF0096FC),
-                                    fontSize: 14.sp,
+                                    fontSize: 13.sp,
                                   ),
                             ),
                           ),

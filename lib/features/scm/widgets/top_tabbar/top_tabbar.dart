@@ -11,7 +11,7 @@ class TopTabbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48.h,
+      height: 40.h,
       child: Row(
         children: List.generate(scmProvider.tabList.length, (index) {
           final bool isSelected = scmProvider.selectedTabIndex == index;
@@ -19,18 +19,14 @@ class TopTabbar extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 scmProvider.topTabbarUpdate(index);
-              
               },
               child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 0.w,
-                  vertical: 10.h,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 0.w, vertical: 10.h),
                 alignment: Alignment.center,
                 decoration: isSelected
                     ? BoxDecoration(
                         color: Color(0xFF0096FC),
-        
+
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10.r),
                           topRight: Radius.circular(10.r),
@@ -53,12 +49,8 @@ class TopTabbar extends StatelessWidget {
                 child: Text(
                   scmProvider.tabList[index],
                   style: TextFontStyle.textLine14C5E5E5EW500.copyWith(
-                    color: isSelected
-                        ? Color(0xFFFFFFFF)
-                        : Color(0xFF646984),
-                    fontWeight: isSelected
-                        ? FontWeight.w700
-                        : FontWeight.w400,
+                    color: isSelected ? Color(0xFFFFFFFF) : Color(0xFF646984),
+                    fontWeight: isSelected ? FontWeight.w700 : FontWeight.w400,
                   ),
                 ),
               ),

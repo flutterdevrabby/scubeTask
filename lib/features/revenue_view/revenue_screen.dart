@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scube_task/const/assets_path.dart';
 import 'package:scube_task/const/text_stye.dart';
+
 import '../../providers/scm_data_provider.dart';
 import '../scm_data/widgets/gauge_widget.dart';
 
@@ -19,14 +20,14 @@ class _RevenueScreenState extends State<RevenueScreen> {
     return Column(
       children: [
         Center(
-          child: GaugeWidget(title: '8897455', subtitle: 'tk', value: 70),
+          child: GaugeWidget(title: '8897455', subtitle: 'tk', value: 75),
         ),
 
         // Data cost info
         Container(
           margin: EdgeInsets.symmetric(horizontal: 16.w),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.r),
             border: Border.all(color: Color(0xFFA5A7B9), width: 1.2.w),
           ),
           child: Theme(
@@ -57,21 +58,21 @@ class _RevenueScreenState extends State<RevenueScreen> {
               ),
 
               trailing: Container(
-                width: 36.w,
-                height: 36.h,
+                width: 28.w,
+                height: 28.h,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color(0xFF0096FC),
                 ),
-                padding: EdgeInsets.all(10.sp),
+                padding: EdgeInsets.all(6.sp),
                 child: Image.asset(
                   widget.scmDataProvider.isExpand
                       ? AssetsIcon.expandUpIcon
                       : AssetsIcon.expandDownIcon,
                   color: Colors.white,
-                  width: 18.w,
-                  height: 18.h,
-                  fit: BoxFit.contain,
+                  width: 24.w,
+                  height: 24.h,
+                  fit: BoxFit.fill,
                 ),
               ),
               children: List.generate(

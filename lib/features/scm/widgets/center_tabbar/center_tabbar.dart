@@ -11,7 +11,7 @@ class CenterTabbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48.h,
+      height: 46.h,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Container(

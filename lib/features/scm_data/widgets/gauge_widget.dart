@@ -36,9 +36,8 @@ class GaugeWidget extends StatelessWidget {
             pointers: <GaugePointer>[
               RangePointer(
                 value: value, // progress value
-                width: 25,
+                width: 20,
                 color: Color(0xFF4E91FD),
-
                 cornerStyle: CornerStyle.bothCurve,
               ),
             ],

@@ -8,8 +8,8 @@ class AssetsIcon {
 
   static const String bellIcon = "assets/icons/bell.svg";
   static const String logoIcon = "assets/icons/logo.png";
-  static const String eyeOnIcon = "assets/icons/eye_on.svg";
-  static const String eyeOffIcon = "assets/icons/eye_off.svg";
+  static const String eyeOnIcon = "assets/icons/eye_on.png";
+  static const String eyeOffIcon = "assets/icons/eye_off.png";
   static const String arrowLeftIcon = "assets/icons/arrow-left.svg";
 
   static const String solarCellIcon = "assets/icons/solar-cell.png";
