@@ -48,7 +48,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   AssetsIcon.logoIcon,
                   width: 96.w,
                   height: 98.h,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                 ),
 
                 SizedBox(height: 16.h),
@@ -164,7 +164,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           // if (!_formKey.currentState!.validate()) {
                           //   return;
                           // } else {
-                            
+
                           // }
                         },
                       ),
