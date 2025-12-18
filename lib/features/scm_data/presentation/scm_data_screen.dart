@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:scube_task/providers/scm_data_provider.dart';
 
 import '../../../const/custom_app_bar.dart';
-import '../../revenue_view/revenue_screen.dart';
+import '../../revenue_view/presentation/revenue_screen.dart';
 import '../widgets/center_tabbar/center_tabbar_widget.dart';
 import '../widgets/current_data_widget.dart';
 import '../widgets/custom_date_data_widget.dart';
@@ -51,6 +51,7 @@ class ScmDataScreen extends StatelessWidget {
 
                                 SizedBox(height: 20.h),
 
+// Center TABBAR
                                 CenterTabbarWidget(scmDataProvider: provider),
 
                                 SizedBox(height: 20.h),

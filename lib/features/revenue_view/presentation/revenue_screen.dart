@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scube_task/const/assets_path.dart';
 import 'package:scube_task/const/text_stye.dart';
 
-import '../../providers/scm_data_provider.dart';
-import '../scm_data/widgets/gauge_widget.dart';
+import '../../../providers/scm_data_provider.dart';
+import '../../scm_data/widgets/gauge_widget.dart';
+import '../widgets/data_cost_widget.dart';
 
 class RevenueScreen extends StatefulWidget {
   final ScmDataProvider scmDataProvider;
@@ -77,7 +78,7 @@ class _RevenueScreenState extends State<RevenueScreen> {
               ),
               children: List.generate(
                 4,
-                (index) => _dataCostItem(
+                (index) => DataCostWidget(
                   dataIndex: index + 1,
                   dataValue: '2798.50 (29.53%)',
                   costValue: '35689 ৳',
@@ -89,48 +90,4 @@ class _RevenueScreenState extends State<RevenueScreen> {
       ],
     );
   }
-}
-
-Widget _dataCostItem({
-  required int dataIndex,
-  required String dataValue,
-  required String costValue,
-}) {
-  return Padding(
-    padding: EdgeInsets.only(bottom: 12.h, left: 15.w),
-    child: Column(
-      spacing: 4.h,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Text(
-              'Data $dataIndex  : ',
-              style: TextFontStyle.textLine12C646984W400.copyWith(
-                color: Color(0xFF646984),
-              ),
-            ),
-            Text(
-              dataValue,
-              style: TextFontStyle.textLine14C646984EW600.copyWith(
-                color: Color(0xFF04063E),
-              ),
-            ),
-          ],
-        ),
-
-        Row(
-          children: [
-            Text('Cost $dataIndex  : '),
-            Text(
-              costValue,
-              style: TextFontStyle.textLine14C646984EW600.copyWith(
-                color: Color(0xFF04063E),
-              ),
-            ),
-          ],
-        ),
-      ],
-    ),
-  );
 }
