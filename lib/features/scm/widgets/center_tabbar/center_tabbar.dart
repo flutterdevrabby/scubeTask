@@ -19,7 +19,6 @@ class CenterTabbar extends StatelessWidget {
             color: const Color(0xFFE2EBF1),
             borderRadius: BorderRadius.circular(30.r),
           ),
-          padding: EdgeInsets.all(4.r),
           child: Row(
             children: List.generate(scmProvider.tabList2.length, (index) {
               final bool isSelected = scmProvider.selectedTab2Index == index;
