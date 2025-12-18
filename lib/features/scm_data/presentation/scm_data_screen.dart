@@ -23,40 +23,26 @@ class ScmDataScreen extends StatelessWidget {
           backgroundColor: Color(0xFFD9E4F1),
           body: SingleChildScrollView(
             physics: ClampingScrollPhysics(),
-            child: Column(
+            child: Stack(
+              clipBehavior: Clip.none,
+              alignment: Alignment.topCenter,
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 40.h),
-                  padding: EdgeInsets.symmetric(vertical: 20.h),
+                  height: 1.4.sh,
+                  margin: EdgeInsets.only(top: 45.h),
+                  padding: EdgeInsets.symmetric(vertical: 16.h),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20.r),
-                    border: Border.all(
-                      width: 1.5.w,
-                      color: const Color(0xFFB6B8D0),
-                    ),
+                    border: Border.all(width: 1.5.w, color: Color(0xFFB6B8D0)),
                   ),
                   child: Column(
                     children: [
-                      Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Container(width: 1.sw, color: Colors.red),
-                          //  Top Tabbar
-                          Positioned(
-                            top: -45.h,
-                            left: 0,
-                            right: 0,
-                            child: TopTabbarWidget(scmDataProvider: provider),
-                          ),
-                        ],
-                      ),
+                      SizedBox(height: 40.h),
+
                       provider.selectTopTabbar == 0
                           ? Column(
                               children: [
-                                SizedBox(height: 40.h),
-
-                                // Gauge widget
                                 GaugeWidget(
                                   title: '55.00',
                                   subtitle: 'kwh/sqft',
@@ -65,12 +51,10 @@ class ScmDataScreen extends StatelessWidget {
 
                                 SizedBox(height: 20.h),
 
-                                //Center Tabbar
                                 CenterTabbarWidget(scmDataProvider: provider),
 
                                 SizedBox(height: 20.h),
 
-                                //Data view
                                 provider.selectedCenterTabbar == 0
                                     ? CurrentDataWidget(
                                         scmDataProvider: provider,
@@ -83,6 +67,14 @@ class ScmDataScreen extends StatelessWidget {
                           : RevenueScreen(scmDataProvider: provider),
                     ],
                   ),
+                ),
+
+                // TOP TABBAR
+                Positioned(
+                  top: 20.h,
+                  left: 0,
+                  right: 0,
+                  child: TopTabbarWidget(scmDataProvider: provider),
                 ),
               ],
             ),

@@ -55,6 +55,7 @@ class CurrentDataWidget extends StatelessWidget {
               return EnergyCardWidget();
             },
           ),
+          SizedBox(height: 8.h),
         ],
       ),
     );

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scube_task/const/assets_path.dart';
 import 'package:scube_task/const/text_stye.dart';
-
 import '../../providers/scm_data_provider.dart';
 import '../scm_data/widgets/gauge_widget.dart';
 
@@ -19,8 +18,6 @@ class _RevenueScreenState extends State<RevenueScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 40.h),
-
         Center(
           child: GaugeWidget(title: '8897455', subtitle: 'tk', value: 70),
         ),

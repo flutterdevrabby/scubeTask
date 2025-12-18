@@ -28,12 +28,12 @@ class CustomDateDataWidget extends StatelessWidget {
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 4.w,
+                      horizontal: 6.w,
                       vertical: 16.h,
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.r),
-                      border: Border.all(color: Color(0xFFB6B8D0), width: 2),
+                      border: Border.all(color: Color(0xFFB6B8D0), width: 2.w),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,39 +64,36 @@ class CustomDateDataWidget extends StatelessWidget {
                 ),
               ),
 
-              // Fr
+              // To Date
               Expanded(
                 flex: 2,
                 child: InkWell(
-                  onTap: (){
-                      scmDataProvider.endDatePicker(context: context);
+                  onTap: () {
+                    scmDataProvider.endDatePicker(context: context);
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 4.w,
+                      horizontal: 6.w,
                       vertical: 16.h,
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.r),
-                      border: Border.all(color: Color(0xFFB6B8D0), width: 2),
+                      border: Border.all(color: Color(0xFFB6B8D0), width: 2.w),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                  
-                           scmDataProvider.endDate != null
+                          scmDataProvider.endDate != null
                               ? scmDataProvider.endDate.toString()
                               : "To Date",
-                  
-                  
-                         
+
                           style: TextFontStyle.textLine12C5E5E5EW500.copyWith(
                             fontWeight: FontWeight.w400,
                             color: Color(0xFF646984),
                           ),
                         ),
-                  
+
                         Image.asset(
                           AssetsIcon.calendarIcon,
                           width: 18.w,
@@ -113,13 +110,14 @@ class CustomDateDataWidget extends StatelessWidget {
               Image.asset(
                 AssetsIcon.searchIcon,
                 width: 45.w,
-                height: 50.h,
+                height: 44.h,
                 fit: BoxFit.contain,
               ),
             ],
           ),
         ),
         SizedBox(height: 16.h),
+
         ListView.builder(
           itemCount: scmDataProvider.eneryList.length,
           shrinkWrap: true,
