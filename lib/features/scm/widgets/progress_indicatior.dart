@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-import '../../../const/text_stye.dart';
+import '../../../constants/text_font_style.dart';
 
 class ProgressIndicatior extends StatelessWidget {
   final String title;

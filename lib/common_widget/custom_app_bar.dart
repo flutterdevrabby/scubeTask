@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:scube_task/const/assets_path.dart';
-import 'package:scube_task/const/text_stye.dart';
+import 'package:scube_task/constants/assets_path.dart';
+import 'package:scube_task/constants/text_font_style.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});

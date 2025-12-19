@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:scube_task/providers/scm_data_provider.dart';
 
-import '../../../const/custom_app_bar.dart';
+import '../../../common_widget/custom_app_bar.dart';
 import '../../revenue_view/presentation/revenue_screen.dart';
 import '../widgets/center_tabbar/center_tabbar_widget.dart';
 import '../widgets/current_data_widget.dart';

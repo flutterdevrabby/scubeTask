@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scube_task/const/text_stye.dart';
+import 'package:scube_task/constants/text_font_style.dart';
 
 class DataGalleryView extends StatelessWidget {
   final Map<String, dynamic> data;

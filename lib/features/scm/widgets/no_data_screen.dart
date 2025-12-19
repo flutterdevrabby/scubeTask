@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scube_task/const/custom_app_bar.dart';
+import 'package:scube_task/common_widget/custom_app_bar.dart';
 
-import '../../../const/assets_path.dart';
+import '../../../constants/assets_path.dart';
 
 class NoDataScreen extends StatelessWidget {
   const NoDataScreen({super.key});

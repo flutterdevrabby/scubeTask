@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-import '../../../const/text_stye.dart';
+import '../../../constants/text_font_style.dart';
 
 class GaugeWidget extends StatelessWidget {
   final String title;

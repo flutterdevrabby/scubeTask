@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../const/assets_path.dart';
+import '../constants/assets_path.dart';
 
 class ScmProvider extends ChangeNotifier {
  List<String> tabList = ["Summery", "SLD", "Data"];

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scube_task/const/assets_path.dart';
-import 'package:scube_task/const/text_stye.dart';
+import 'package:scube_task/constants/assets_path.dart';
+import 'package:scube_task/constants/text_font_style.dart';
 
 import '../../../providers/scm_data_provider.dart';
 import '../../scm_data/widgets/gauge_widget.dart';

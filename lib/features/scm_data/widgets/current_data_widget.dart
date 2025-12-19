@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../const/text_stye.dart';
+import '../../../constants/text_font_style.dart';
 import '../../../providers/scm_data_provider.dart';
 import 'energy_card_widget.dart';
 

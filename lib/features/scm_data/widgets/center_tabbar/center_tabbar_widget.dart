@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../const/assets_path.dart';
-import '../../../../const/text_stye.dart';
+import '../../../../constants/assets_path.dart';
+import '../../../../constants/text_font_style.dart';
 import '../../../../providers/scm_data_provider.dart';
 
 class CenterTabbarWidget extends StatelessWidget {

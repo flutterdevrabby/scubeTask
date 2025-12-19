@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scube_task/providers/scm_provider.dart';
 
-import '../../../../const/text_stye.dart';
+import '../../../../constants/text_font_style.dart';
 
 class TopTabbar extends StatelessWidget {
   final ScmProvider scmProvider;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../const/assets_path.dart';
+import '../constants/assets_path.dart';
 
 class ScmDataProvider extends ChangeNotifier {
   // Top Tab Bar

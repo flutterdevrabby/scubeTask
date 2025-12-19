@@ -5,10 +5,10 @@ import 'package:provider/provider.dart';
 import 'package:scube_task/providers/sign_in_provider.dart';
 import 'package:scube_task/routes/routes.dart';
 
-import '../../../const/assets_path.dart';
-import '../../../const/custom_button.dart';
-import '../../../const/custom_text_field.dart';
-import '../../../const/text_stye.dart';
+import '../../../constants/assets_path.dart';
+import '../../../common_widget/custom_button.dart';
+import '../../../common_widget/custom_text_field.dart';
+import '../../../constants/text_font_style.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
